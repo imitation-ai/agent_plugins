@@ -1,4 +1,4 @@
-# Imitation AI agent plugins
+# Imitation AI(™) agent plugins
 
 This repository is the public Imitation AI plugin marketplace for Codex and Claude. It lets users install Macrosona Memory from Git without downloading and running a separate platform-specific installer.
 
