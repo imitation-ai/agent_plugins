@@ -1,0 +1,10 @@
+{
+  "name": "macrosona-capture-claude",
+  "version": "0.3.0",
+  "description": "Search Macrosona memory and save explicitly approved notes from Claude.",
+  "author": {
+    "name": "Imitation AI",
+    "url": "https://github.com/imitation-ai"
+  },
+  "repository": "https://github.com/imitation-ai/agent_plugins"
+}

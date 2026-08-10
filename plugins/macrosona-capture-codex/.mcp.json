@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "macrosona-capture": {
+      "type": "http",
+      "url": "https://api.dev.macrosona.com/capture/mcp",
+      "bearer_token_env_var": "MACROSONA_CAPTURE_TOKEN"
+    },
+    "macrosona-retrieval": {
+      "type": "http",
+      "url": "https://api.dev.macrosona.com/retrieval/mcp",
+      "bearer_token_env_var": "MACROSONA_MCP_TOKEN"
+    }
+  }
+}
