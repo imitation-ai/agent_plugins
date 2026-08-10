@@ -2,17 +2,11 @@
   "mcpServers": {
     "macrosona-capture": {
       "type": "http",
-      "url": "https://api.dev.macrosona.com/capture/mcp",
-      "headers": {
-        "Authorization": "Bearer ${MACROSONA_CAPTURE_TOKEN}"
-      }
+      "url": "https://api.dev.macrosona.com/capture/mcp"
     },
     "macrosona-retrieval": {
       "type": "http",
-      "url": "https://api.dev.macrosona.com/retrieval/mcp",
-      "headers": {
-        "Authorization": "Bearer ${MACROSONA_MCP_TOKEN}"
-      }
+      "url": "https://api.dev.macrosona.com/retrieval/mcp"
     }
   }
 }

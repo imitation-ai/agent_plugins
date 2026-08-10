@@ -2,18 +2,20 @@
 
 This repository is the public Imitation AI plugin marketplace for Codex and Claude. It lets users install Macrosona Memory from Git without downloading and running a separate platform-specific installer.
 
-## Macrosona Memory
+## Macrosona™ Memory
 
-Macrosona gives supported AI clients two separated capabilities:
+Macrosona™ gives supported AI clients two separated capabilities:
 
-- read-only retrieval from the user's Macrosona;
+- read-only retrieval from the user's Macrosona™;
 - write-only capture of concise notes the user explicitly approves.
 
 The public marketplace package does not silently capture every conversation turn. This keeps installation cross-platform and avoids a Python or macOS dependency.
 
 ## Before installation
 
-In Macrosona, open **Connections**, create a connection for the client, and keep both one-time keys available:
+Claude now connects through Macrosona's browser sign-in. You do not need to create, copy, or store API keys for Claude.
+
+Codex and manual token-based integrations continue to use the existing PAT flow. In Macrosona™, open **Connections**, create a connection for the client, and keep both one-time keys available:
 
 - capture key: `MACROSONA_CAPTURE_TOKEN`
 - retrieval key: `MACROSONA_MCP_TOKEN`
@@ -46,23 +48,7 @@ Inside Claude Code, add the marketplace and install the plugin:
 /plugin install macrosona-capture-claude@imitation-ai
 ```
 
-Set the two keys in the environment before starting a new Claude Code session.
-
-macOS or Linux:
-
-```shell
-export MACROSONA_CAPTURE_TOKEN="your-capture-key"
-export MACROSONA_MCP_TOKEN="your-retrieval-key"
-claude
-```
-
-Windows PowerShell:
-
-```powershell
-$env:MACROSONA_CAPTURE_TOKEN = "your-capture-key"
-$env:MACROSONA_MCP_TOKEN = "your-retrieval-key"
-claude
-```
+Claude will open Macrosona in your browser. Sign in and approve the requested capture and retrieval permissions. Existing PAT-based Codex and manual MCP connections continue to work unchanged.
 
 ## Add the Macrosona instructions
 
@@ -75,7 +61,7 @@ The plugins connect to these hosted Streamable HTTP MCP services:
 - capture: `https://api.dev.macrosona.com/capture/mcp`
 - retrieval: `https://api.dev.macrosona.com/retrieval/mcp`
 
-The capture token is write-only and the retrieval token is read-only. Both are scoped to the user's Macrosona workspace.
+OAuth access is scoped to the signed-in user's Macrosona workspace. Capture remains write-only and retrieval remains read-only. PAT authentication remains available for clients that require it.
 
 ## Repository layout
 

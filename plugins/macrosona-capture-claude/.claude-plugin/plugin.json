@@ -1,6 +1,6 @@
 {
   "name": "macrosona-capture-claude",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Search Macrosona memory and save explicitly approved notes from Claude.",
   "author": {
     "name": "Imitation AI",
