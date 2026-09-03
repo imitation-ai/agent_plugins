@@ -39,16 +39,17 @@ To receive marketplace updates later:
 codex plugin marketplace upgrade imitation-ai
 ```
 
-## Install in Claude Code
+## Install in Claude
 
-Inside Claude Code, add the marketplace and install the plugin:
+Use Claude's manual plugin screens:
 
-```text
-/plugin marketplace add imitation-ai/agent_plugins
-/plugin install macrosona-capture-claude@imitation-ai
-```
+1. Open **Settings > Plugins**.
+2. Select **Add custom marketplace**, choose the GitHub option, and add `https://github.com/imitation-ai/agent_plugins.git`.
+3. Open the Imitation AI marketplace and add **Macrosona Memory**.
+4. Select **Connect** for Macrosona Capture and Macrosona Retrieval.
+5. Claude opens Macrosona in your browser. Sign in and approve the requested capture and retrieval permissions.
 
-Claude will open Macrosona in your browser. Sign in and approve the requested capture and retrieval permissions. Existing PAT-based Codex and manual MCP connections continue to work unchanged.
+You do not need to create, copy, or store capture or retrieval keys for Claude. Existing PAT-based Codex and manual MCP connections continue to work unchanged.
 
 ## Add the Macrosona instructions
 
