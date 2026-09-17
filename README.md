@@ -1,68 +1,35 @@
-# Imitation AI™ agent plugins
+# Imitation AI agent plugins
 
-This repository is the public Imitation AI plugin marketplace for Codex and Claude. It lets users install Macrosona Memory from Git without downloading and running a separate platform-specific installer.
+Macrosona Memory brings your long-term memory to Codex and Claude. Both plugins use one secure OAuth connection to search memory and save notes you explicitly approve.
 
-## Macrosona™ Memory
+## Connect
 
-Macrosona™ gives supported AI clients two separated capabilities:
+Install **Macrosona Memory** from the Imitation AI marketplace in your app, select **Connect**, then sign in to Macrosona and approve access. That single connection enables both search and approved-note capture. The plugin includes the memory instructions; there is nothing to paste into your settings.
 
-- read-only retrieval from the user's Macrosona™;
-- write-only capture of concise notes the user explicitly approves.
+If you have not added the marketplace yet, add this repository in your app's Plugins settings:
 
-The public marketplace package does not silently capture every conversation turn. This keeps installation cross-platform and avoids a Python or macOS dependency.
+`https://github.com/imitation-ai/agent_plugins.git`
 
-## Before installation
-
-Claude now connects through Macrosona's browser sign-in. You do not need to create, copy, or store API keys for Claude.
-
-Codex and manual token-based integrations continue to use the existing PAT flow. In Macrosona™, open **Connections**, create a connection for the client, and keep both one-time keys available:
-
-- capture key: `MACROSONA_CAPTURE_TOKEN`
-- retrieval key: `MACROSONA_MCP_TOKEN`
-
-Never commit either key to this or another Git repository.
-
-## Install in Codex
-
-Add the marketplace directly from Git, then install the plugin:
+For Codex CLI, install with:
 
 ```shell
 codex plugin marketplace add https://github.com/imitation-ai/agent_plugins.git
 codex plugin add macrosona-capture-codex@imitation-ai
 ```
 
-When Codex asks for authentication, use the capture key for `MACROSONA_CAPTURE_TOKEN` and the retrieval key for `MACROSONA_MCP_TOKEN`. Start a new Codex task after installation so its tools and instructions are loaded.
+Start a new task after installation so the plugin instructions are loaded. In Claude, add the marketplace in **Settings → Plugins**, then install **Macrosona Memory** and select **Connect**.
 
-To receive marketplace updates later:
+## Updating from an older plugin
 
-```shell
-codex plugin marketplace upgrade imitation-ai
-```
+Update the Imitation AI marketplace and reinstall/update Macrosona Memory. Connect the new **Macrosona** service when prompted. Once it works, remove the old separate Capture and Retrieval connections in your app. Old keys are not required by this plugin; revoke them from Macrosona's existing-access list when no longer used.
 
-## Install in Claude
+## Privacy
 
-Use Claude's manual plugin screens:
+OAuth access is limited to your signed-in Macrosona workspace. Searches are read-only. Saving requires an explicit user request; the plugin does not silently capture conversations. Disconnect access in your app or Macrosona.
 
-1. Open **Settings > Plugins**.
-2. Select **Add custom marketplace**, choose the GitHub option, and add `https://github.com/imitation-ai/agent_plugins.git`.
-3. Open the Imitation AI marketplace and add **Macrosona Memory**.
-4. Select **Connect** for Macrosona Capture and Macrosona Retrieval.
-5. Claude opens Macrosona in your browser. Sign in and approve the requested capture and retrieval permissions.
+## Hosted connection
 
-You do not need to create, copy, or store capture or retrieval keys for Claude. Existing PAT-based Codex and manual MCP connections continue to work unchanged.
-
-## Add the Macrosona instructions
-
-After installation, copy [SYSTEM_MESSAGE.md](./SYSTEM_MESSAGE.md) into the client's personal or custom instructions. This tells the AI when to search Macrosona and when it is permitted to save a note.
-
-## Hosted connections
-
-The plugins connect to these hosted Streamable HTTP MCP services:
-
-- capture: `https://api.dev.macrosona.com/capture/mcp`
-- retrieval: `https://api.dev.macrosona.com/retrieval/mcp`
-
-OAuth access is scoped to the signed-in user's Macrosona workspace. Capture remains write-only and retrieval remains read-only. PAT authentication remains available for clients that require it.
+Both plugins use `https://api.dev.macrosona.com/plugin/mcp`. This OAuth-only endpoint exposes memory retrieval and approved-note capture through one connection. Deploy the endpoint and its gateway route before releasing these plugin versions.
 
 ## Repository layout
 
@@ -70,4 +37,3 @@ OAuth access is scoped to the signed-in user's Macrosona workspace. Capture rema
 - `.claude-plugin/marketplace.json`: Claude marketplace
 - `plugins/macrosona-capture-codex`: Codex package
 - `plugins/macrosona-capture-claude`: Claude package
-- `SYSTEM_MESSAGE.md`: shared AI usage instructions

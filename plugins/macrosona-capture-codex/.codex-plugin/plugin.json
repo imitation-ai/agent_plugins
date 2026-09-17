@@ -1,6 +1,6 @@
 {
   "name": "macrosona-capture-codex",
-  "version": "0.3.0",
+  "version": "0.3.0+codex.20260917160030",
   "description": "Search Macrosona memory and save explicitly approved notes from Codex.",
   "author": {
     "name": "Imitation AI",

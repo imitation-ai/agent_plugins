@@ -1,12 +1,8 @@
 {
   "mcpServers": {
-    "macrosona-capture": {
+    "macrosona": {
       "type": "http",
-      "url": "https://api.dev.macrosona.com/capture/mcp"
-    },
-    "macrosona-retrieval": {
-      "type": "http",
-      "url": "https://api.dev.macrosona.com/retrieval/mcp"
+      "url": "https://api.dev.macrosona.com/plugin/mcp"
     }
   }
 }
