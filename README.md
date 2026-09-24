@@ -2,13 +2,23 @@
 
 Macrosona Memory brings your long-term memory to Codex and Claude. Both plugins use one secure OAuth connection to search memory and save notes you explicitly approve.
 
-## Connect
+## Connect with one prompt
+
+Paste the matching prompt into a new Codex or Claude conversation. The agent will add or refresh the marketplace, install the plugin and start OAuth. You only need to approve the Macrosona sign-in when it opens.
+
+### Codex
+
+> Install or update Macrosona Memory for Codex. Use the Imitation AI plugin marketplace at https://github.com/imitation-ai/agent_plugins.git. Add the marketplace if it is missing, or refresh it if it already exists, then install macrosona-capture-codex@imitation-ai. Start the plugin's OAuth connection and pause while I approve access in Macrosona. After approval, verify that the single Macrosona connection exposes both search_memory and capture_note. Do not ask for, copy, or print any access token. If an older duplicate Macrosona plugin is installed, keep it until the new connection passes both checks, then disable the duplicate. If a new chat is required to load the plugin, tell me clearly and give me the exact final step.
+
+### Claude
+
+> Install or update Macrosona Memory for Claude. Use the Imitation AI plugin marketplace at https://github.com/imitation-ai/agent_plugins.git. Add the marketplace if it is missing, or refresh it if it already exists, then install macrosona-capture-claude@imitation-ai. Start the plugin's OAuth connection and pause while I approve access in Macrosona. After approval, verify that the single Macrosona connection exposes both search_memory and capture_note. Do not ask for, copy, or print any access token. If an older duplicate Macrosona plugin is installed, keep it until the new connection passes both checks, then disable the duplicate. If a new chat is required to load the plugin, tell me clearly and give me the exact final step.
+
+## Manual fallback
 
 Install **Macrosona Memory** from the Imitation AI marketplace in your app, select **Connect**, then sign in to Macrosona and approve access. That single connection enables both search and approved-note capture. The plugin includes the memory instructions; there is nothing to paste into your settings.
 
-If you have not added the marketplace yet, add this repository in your app's Plugins settings:
-
-`https://github.com/imitation-ai/agent_plugins.git`
+Marketplace: `https://github.com/imitation-ai/agent_plugins.git`
 
 For Codex CLI, install with:
 
@@ -17,7 +27,16 @@ codex plugin marketplace add https://github.com/imitation-ai/agent_plugins.git
 codex plugin add macrosona-capture-codex@imitation-ai
 ```
 
-Start a new task after installation so the plugin instructions are loaded. In Claude, add the marketplace in **Settings → Plugins**, then install **Macrosona Memory** and select **Connect**.
+If the Codex marketplace already exists, run `codex plugin marketplace upgrade imitation-ai` before installing. Start a new task after installation so the plugin instructions are loaded.
+
+For Claude Code, run:
+
+```text
+/plugin marketplace add https://github.com/imitation-ai/agent_plugins.git
+/plugin install macrosona-capture-claude@imitation-ai
+```
+
+In the Claude desktop app, add the marketplace in **Settings → Plugins**, install **Macrosona Memory**, and select **Connect**.
 
 ## Updating from an older plugin
 

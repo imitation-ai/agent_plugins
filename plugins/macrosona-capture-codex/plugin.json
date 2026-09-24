@@ -1,4 +1,5 @@
 {
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "macrosona-capture-codex",
   "version": "0.3.0+codex.20260923130733",
   "description": "Search Macrosona memory and save explicitly approved notes from Codex.",
@@ -7,25 +8,16 @@
     "url": "https://github.com/imitation-ai"
   },
   "repository": "https://github.com/imitation-ai/agent_plugins",
-  "keywords": [
-    "macrosona",
-    "memory",
-    "conversation",
-    "knowledge"
-  ],
+  "keywords": ["macrosona", "memory", "conversation", "knowledge"],
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Macrosona Memory",
     "shortDescription": "Use Macrosona as long-term memory in Codex.",
-    "longDescription": "Searches your brain-scoped Macrosona before answers that depend on prior context and saves concise notes only when you explicitly ask. Retrieval is read-only and capture is write-only.",
+    "longDescription": "Searches your brain-scoped Macrosona before answers that depend on prior context and saves concise notes only when you explicitly ask. One OAuth connection enables both capabilities.",
     "developerName": "Imitation AI",
     "category": "Productivity",
-    "capabilities": [
-      "Memory retrieval",
-      "Explicit memory notes",
-      "Evidence lineage"
-    ],
+    "capabilities": ["Memory retrieval", "Explicit memory notes", "Evidence lineage"],
     "defaultPrompt": [
       "What have we previously decided about this?",
       "Save this decision to my Macrosona."
