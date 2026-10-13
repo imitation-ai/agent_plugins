@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "macrosona-capture-claude",
-  "version": "0.6.2",
+  "version": "0.4.3",
   "description": "Search Macrosona memory and save approved notes across Claude Chat, Cowork and Claude Code with guided OAuth setup.",
   "author": {
     "name": "Imitation AI",
@@ -18,7 +18,7 @@
     "com.openai": {
       "interface": {
         "displayName": "Macrosona",
-        "shortDescription": "Long-term memory for chat, work and coding.",
+        "shortDescription": "Recall memory. Save decisions.",
         "longDescription": "Search Macrosona memory and save approved notes across Claude Chat, Cowork and Claude Code with guided OAuth setup. Account-level connection and per-interface verification are part of setup. Recently captured memories may need processing before search can find them.",
         "developerName": "Imitation AI",
         "category": "Productivity",
@@ -30,7 +30,13 @@
         "defaultPrompt": [
           "What have we previously decided about this?",
           "Save this decision to my Macrosona."
-        ]
+        ],
+        "websiteURL": "https://www.macrosona.com",
+        "supportURL": "https://www.macrosona.com/support",
+        "privacyPolicyURL": "https://www.macrosona.com/privacy",
+        "termsOfServiceURL": "https://www.macrosona.com/terms",
+        "logo": "./assets/logo.svg",
+        "composerIcon": "./assets/logo.svg"
       },
       "onboardingSkill": "./skills/macrosona-setup/SKILL.md"
     }
