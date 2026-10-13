@@ -1,26 +1,38 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "macrosona-capture-codex",
-  "version": "0.3.0+codex.20260923130733",
-  "description": "Search Macrosona memory and save explicitly approved notes from Codex.",
+  "version": "0.4.2",
+  "description": "Search Macrosona memory and save approved notes across ChatGPT Chat, Work and Codex with guided OAuth setup.",
   "author": {
     "name": "Imitation AI",
     "url": "https://github.com/imitation-ai"
   },
   "repository": "https://github.com/imitation-ai/agent_plugins",
-  "keywords": ["macrosona", "memory", "conversation", "knowledge"],
-  "skills": "./skills/",
-  "mcpServers": "./.mcp.json",
-  "interface": {
-    "displayName": "Macrosona Memory",
-    "shortDescription": "Use Macrosona as long-term memory in Codex.",
-    "longDescription": "Searches your brain-scoped Macrosona before answers that depend on prior context and saves concise notes only when you explicitly ask. One OAuth connection enables both capabilities.",
-    "developerName": "Imitation AI",
-    "category": "Productivity",
-    "capabilities": ["Memory retrieval", "Explicit memory notes", "Evidence lineage"],
-    "defaultPrompt": [
-      "What have we previously decided about this?",
-      "Save this decision to my Macrosona."
-    ]
+  "keywords": [
+    "macrosona",
+    "memory",
+    "conversation",
+    "knowledge"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Macrosona",
+        "shortDescription": "Long-term memory for chat, work and coding.",
+        "longDescription": "Search Macrosona memory and save approved notes across ChatGPT Chat, Work and Codex with guided OAuth setup. Account-level connection and per-interface verification are part of setup. Recently captured memories may need processing before search can find them.",
+        "developerName": "Imitation AI",
+        "category": "Productivity",
+        "capabilities": [
+          "Memory retrieval",
+          "Explicit memory notes",
+          "Evidence lineage"
+        ],
+        "defaultPrompt": [
+          "What have we previously decided about this?",
+          "Save this decision to my Macrosona."
+        ]
+      },
+      "onboardingSkill": "./skills/macrosona-setup/SKILL.md"
+    }
   }
 }

@@ -9,13 +9,14 @@
   "plugins": [
     {
       "name": "macrosona-capture-claude",
-      "description": "Use Macrosona as long-term memory in Claude.",
-      "version": "0.5.1",
+      "description": "Long-term memory for Claude Chat, Cowork and Claude Code with guided OAuth setup.",
+      "version": "0.6.2",
       "author": {
         "name": "Imitation AI"
       },
       "source": "./plugins/macrosona-capture-claude",
-      "category": "productivity"
+      "category": "productivity",
+      "displayName": "Macrosona"
     }
   ]
 }

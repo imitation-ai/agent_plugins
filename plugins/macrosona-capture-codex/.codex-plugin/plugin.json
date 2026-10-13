@@ -1,7 +1,7 @@
 {
   "name": "macrosona-capture-codex",
-  "version": "0.3.0+codex.20260923130733",
-  "description": "Search Macrosona memory and save explicitly approved notes from Codex.",
+  "version": "0.4.2",
+  "description": "Search Macrosona memory and save approved notes across ChatGPT Chat, Work and Codex with guided OAuth setup.",
   "author": {
     "name": "Imitation AI",
     "url": "https://github.com/imitation-ai"
@@ -16,9 +16,9 @@
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
-    "displayName": "Macrosona Memory",
-    "shortDescription": "Use Macrosona as long-term memory in Codex.",
-    "longDescription": "Searches your brain-scoped Macrosona before answers that depend on prior context and saves concise notes only when you explicitly ask. Retrieval is read-only and capture is write-only.",
+    "displayName": "Macrosona",
+    "shortDescription": "Long-term memory for chat, work and coding.",
+    "longDescription": "Search Macrosona memory and save approved notes across ChatGPT Chat, Work and Codex with guided OAuth setup. Account-level connection and per-interface verification are part of setup. Recently captured memories may need processing before search can find them.",
     "developerName": "Imitation AI",
     "category": "Productivity",
     "capabilities": [
@@ -30,5 +30,10 @@
       "What have we previously decided about this?",
       "Save this decision to my Macrosona."
     ]
+  },
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/macrosona-setup/SKILL.md"
+    }
   }
 }
