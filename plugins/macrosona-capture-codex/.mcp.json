@@ -2,7 +2,7 @@
   "mcpServers": {
     "macrosona": {
       "type": "http",
-      "url": "https://api.dev.macrosona.com/plugin/mcp"
+      "url": "https://mcp.macrosona.com/plugin/mcp"
     }
   }
 }

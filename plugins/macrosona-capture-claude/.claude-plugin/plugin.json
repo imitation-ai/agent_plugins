@@ -1,11 +1,38 @@
 {
   "name": "macrosona-capture-claude",
-  "version": "0.6.2",
+  "version": "0.4.3",
   "description": "Search Macrosona memory and save approved notes across Claude Chat, Cowork and Claude Code with guided OAuth setup.",
   "author": {
     "name": "Imitation AI",
     "url": "https://github.com/imitation-ai"
   },
   "repository": "https://github.com/imitation-ai/agent_plugins",
-  "displayName": "Macrosona"
+  "displayName": "Macrosona",
+  "interface": {
+    "displayName": "Macrosona",
+    "shortDescription": "Recall memory. Save decisions.",
+    "longDescription": "Search Macrosona memory and save approved notes across Claude Chat, Cowork and Claude Code with guided OAuth setup. Account-level connection and per-interface verification are part of setup. Recently captured memories may need processing before search can find them.",
+    "developerName": "Imitation AI",
+    "category": "Productivity",
+    "capabilities": [
+      "Memory retrieval",
+      "Explicit memory notes",
+      "Evidence lineage"
+    ],
+    "defaultPrompt": [
+      "What have we previously decided about this?",
+      "Save this decision to my Macrosona."
+    ],
+    "websiteURL": "https://www.macrosona.com",
+    "supportURL": "https://www.macrosona.com/support",
+    "privacyPolicyURL": "https://www.macrosona.com/privacy",
+    "termsOfServiceURL": "https://www.macrosona.com/terms",
+    "logo": "./assets/logo.svg",
+    "composerIcon": "./assets/logo.svg"
+  },
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/macrosona-setup/SKILL.md"
+    }
+  }
 }

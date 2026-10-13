@@ -70,7 +70,7 @@ The Codex IDE extension currently does not support plugins. Direct the user to C
 
 ## OAuth and verification
 
-Use the release's public HTTPS endpoint from its MCP configuration. The default is `https://api.dev.macrosona.com/plugin/mcp`. Use OAuth for each host that requires its own sign-in; the user approves memory search and approved-note capture. Never ask for, print or copy access tokens, move credentials between hosts, or substitute localhost servers or legacy environment tokens.
+Use the release's public HTTPS endpoint from its MCP configuration. The default is `https://mcp.macrosona.com/plugin/mcp`. Use OAuth for each host that requires its own sign-in; the user approves memory search and approved-note capture. Never ask for, print or copy access tokens, move credentials between hosts, or substitute localhost servers or legacy environment tokens.
 
 In each intended interface, discover `search_memory` and `capture_note`, then run a read-only search. Tool discovery verifies capture availability; writing a test note requires an explicit request for that note. A successful empty search is valid for a new workspace. On legacy wiki workspaces, omit typed-memory and scope filters. Use the `macrosona-memory` skill for normal retrieval and guidance about information awaiting ingestion or processing.
 
