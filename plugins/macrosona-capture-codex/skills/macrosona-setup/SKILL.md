@@ -1,10 +1,12 @@
 ---
 name: macrosona-setup
-description: Connect or repair the Macrosona plugin in ChatGPT or Codex when onboarding or resolving missing memory tools or sign-in problems.
+description: Install, update, connect or repair Macrosona across chat, work and coding interfaces. Use for onboarding, missing Macrosona tools or checking access in another interface.
 ---
 
-# Connect Macrosona
+# Set up Macrosona
 
-Read [connection and verification](references/SETUP.md) when the user needs setup or connection repair. Follow the route for their current host and account. Complete available steps; identify the exact sign-in, consent or administrator step that still requires the user.
+Read the [shared setup guide](references/SETUP.md) and follow the route for the current host. It covers native installation, OAuth, account-level access and per-interface verification.
 
-Use `macrosona-memory` for normal retrieval and explicitly requested note capture. A local installation or successful consent in one interface does not prove access in another.
+Use a release source explicitly supplied by the user rather than replacing it with the default repository. Complete available steps and report exact account or consent steps still needing the user. Use one local installation method and keep credentials private.
+
+The plugin includes `macrosona-retrieve`, `macrosona-capture` and `macrosona-distil`. `macrosona-memory` remains the compatibility entry point. Verify tool access separately from the host's ability to create downloadable files; never write a test note or export client knowledge merely to test installation.

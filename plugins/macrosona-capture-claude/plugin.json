@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "macrosona-capture-claude",
-  "version": "0.4.3",
-  "description": "Search Macrosona memory and save approved notes across Claude Chat, Cowork and Claude Code with guided OAuth setup.",
+  "version": "0.8.0",
+  "description": "Retrieve Macrosona knowledge, capture approved notes and distil standalone wikis and offline knowledge skills.",
   "author": {
     "name": "Imitation AI",
     "url": "https://github.com/imitation-ai"
@@ -18,18 +18,22 @@
     "com.openai": {
       "interface": {
         "displayName": "Macrosona",
-        "shortDescription": "Recall memory. Save decisions.",
-        "longDescription": "Search Macrosona memory and save approved notes across Claude Chat, Cowork and Claude Code with guided OAuth setup. Account-level connection and per-interface verification are part of setup. Recently captured memories may need processing before search can find them.",
+        "shortDescription": "Retrieve. Capture. Distil.",
+        "longDescription": "Macrosona connects your authorised workspace to your AI client with three capabilities: retrieve, capture and distil. Retrieve prior conversations, decisions, preferences and project knowledge with source evidence. Capture concise notes only when you explicitly ask. Distil selected subject knowledge into a linked Markdown wiki and standalone skill using the client's file tools.\n\nThe creator investigates Macrosona and compiles the package locally. Recipient packages need no Macrosona account or connector. Search-based collection is best-effort, not an exhaustive export or atomic snapshot; review scope, evidence and release eligibility. File creation and skill use depend on the host. Independence from Macrosona does not guarantee local model inference.\n\nA Macrosona account and OAuth connection are required for retrieval, capture and creation from live memory. User-authored working context is guidance, not source evidence. Notes may need ingestion and processing before search finds them. The plugin does not automatically capture whole conversations. Do not submit passwords, authentication secrets, payment-card data, government identifiers or protected health information.\n\nDistilled Brains can sync privately to the connected creator account for immutable versioning and owner-controlled download distribution. Stored packages are kept outside Macrosona memory ingestion and search. Sync needs distilled:write consent; publishing and sharing remain separate owner actions. Existing offline copies require manual updating.",
         "developerName": "Imitation AI",
         "category": "Productivity",
         "capabilities": [
           "Memory retrieval",
-          "Explicit memory notes",
-          "Evidence lineage"
+          "Approved memory notes",
+          "Offline knowledge distillation",
+          "Evidence lineage",
+          "Working context",
+          "Distilled Brain versioning"
         ],
         "defaultPrompt": [
-          "What have we previously decided about this?",
-          "Save this decision to my Macrosona."
+          "What have we previously decided about this project?",
+          "Save this decision to my Macrosona.",
+          "Create a standalone wiki and offline knowledge skill for this project from Macrosona."
         ],
         "websiteURL": "https://www.macrosona.com",
         "supportURL": "https://www.macrosona.com/support",

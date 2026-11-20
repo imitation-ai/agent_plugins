@@ -9,8 +9,8 @@
   "plugins": [
     {
       "name": "macrosona-capture-claude",
-      "description": "Long-term memory for Claude Chat, Cowork and Claude Code with guided OAuth setup.",
-      "version": "0.6.2",
+      "description": "Retrieve Macrosona knowledge, capture approved notes and distil standalone wikis and offline knowledge skills.",
+      "version": "0.8.0",
       "author": {
         "name": "Imitation AI"
       },

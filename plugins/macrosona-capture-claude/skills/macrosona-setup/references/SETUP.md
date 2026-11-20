@@ -6,7 +6,7 @@ Use this guide to install, update or repair Macrosona in Chat, Work/Cowork and C
 
 ## Choose the source and installation method
 
-Detect the current host before running commands. Use one local installation method per environment. Prefer the native plugin so both skills and the remote MCP connector are installed together; installing a skill alone does not connect Macrosona.
+Detect the current host before running commands. Use one local installation method per environment. Prefer the native plugin so the capability skills and the remote MCP connector are installed together; installing a skill alone does not connect Macrosona.
 
 If the user or this guide supplies a development archive, marketplace or version, use it instead of the default repository. Download the marketplace ZIP and extract it to a new directory. The marketplace root is the folder containing `.agents/plugins/marketplace.json` and `.claude-plugin/marketplace.json`; read its `name` to choose the installation suffix. The development name is `imitation-ai-dev`. Resolve relative download links against the address from which you read this guide.
 
@@ -64,18 +64,20 @@ Start new Chat and Cowork tasks. Account-installed plugins sync one-way into Cla
 
 Open **ChatGPT Plugins** in the same account and workspace as Codex. Enable the requested Macrosona package if the local marketplace is exposed there. If its hosted connection is missing, use **+ → Add custom MCP server**, enter the release's HTTPS MCP endpoint, select OAuth and complete Macrosona sign-in. Create the personal plugin if the host asks.
 
-If the local marketplace cannot be used in Chat or Work, use the host's plugin creator to combine the memory and setup skills from the requested Codex plugin ZIP with the registered hosted connector. Use the actual `plugin_asdk_app...` ID returned by registration if a mapping is needed. Never invent an account ID or publish a user's ID in the shared package. Start new Chat and Work conversations with the plugin selected, then verify each.
+If the local marketplace cannot be used in Chat or Work, use the host's plugin creator to combine the retrieval, capture, distil, compatibility and setup skills from the requested Codex plugin ZIP with the registered hosted connector. Use the actual `plugin_asdk_app...` ID returned by registration if a mapping is needed. Never invent an account ID or publish a user's ID in the shared package. Start new Chat and Work conversations with the plugin selected, then verify each.
 
 The Codex IDE extension currently does not support plugins. Direct the user to Codex desktop or CLI for plugin installation instead of promising availability there.
 
 ## OAuth and verification
 
-Use the release's public HTTPS endpoint from its MCP configuration. The default is `https://mcp.macrosona.com/plugin/mcp`. Use OAuth for each host that requires its own sign-in; the user approves memory search and approved-note capture. Never ask for, print or copy access tokens, move credentials between hosts, or substitute localhost servers or legacy environment tokens.
+Use the release's public HTTPS endpoint from its MCP configuration. The default is `https://mcp.macrosona.com/plugin/mcp`. Use OAuth for each host that requires its own sign-in; the user approves memory search, approved-note capture and private Distilled Brain sync. Existing connections without distilled:write retain retrieval/capture but need new consent for package syncing. Never ask for, print or copy access tokens, move credentials between hosts, or substitute localhost servers or legacy environment tokens.
 
-In each intended interface, discover `search_memory` and `capture_note`, then run a read-only search. Tool discovery verifies capture availability; writing a test note requires an explicit request for that note. A successful empty search is valid for a new workspace. On legacy wiki workspaces, omit typed-memory and scope filters. Use the `macrosona-memory` skill for normal retrieval and guidance about information awaiting ingestion or processing.
+In each intended interface, discover `search_memory` and `capture_note`, then run a read-only search. Tool discovery verifies capture availability; writing a test note requires an explicit request for that note. A successful empty search is valid for a new workspace. On legacy wiki workspaces, omit typed-memory and scope filters. Use `macrosona-retrieve` for recall and processing-delay guidance, `macrosona-capture` for approved notes, and `macrosona-distil` for standalone knowledge packages. `macrosona-memory` remains a compatibility entry point.
 
 Report each interface as verified, awaiting user action, unavailable or untested, with exact remaining steps. One OAuth receipt or a website badge does not prove that every host can use the tools.
 
-These OAuth packages provide memory retrieval and explicit approved-note capture. They contain no automatic-capture hooks. Ordinary Chat and cloud-orchestrated ChatGPT Work do not run local coding hooks; describe automatic capture only when the installed package and runtime support it.
+These OAuth packages provide retrieval, capture and distil. Distil uses the connected client to compile a linked wiki and standalone skill; it can sync the finished archive privately through the registry upload tools with distilled:write consent. This is artifact storage, not an exhaustive memory export or ingestion path. Verify file creation separately in each intended host. A host without file tools can prepare content but cannot claim a downloadable package. Search-based collection is best-effort, not an exhaustive inventory. Generated recipient skills need no Macrosona connection.
+
+The packages provide explicit approved-note capture. They contain no automatic-capture hooks. Ordinary Chat and cloud-orchestrated ChatGPT Work do not run local coding hooks; describe automatic capture only when the installed package and runtime support it.
 
 For changes in host behaviour, consult [OpenAI plugin packaging](https://developers.openai.com/plugins/build/plugins), [OpenAI supported interfaces](https://learn.chatgpt.com/docs/plugins), [Claude account plugins](https://claude.com/docs/plugins/overview) and [Claude plugin structure](https://claude.com/docs/plugins/build).

@@ -13,7 +13,8 @@
             },
             "baseScopes": [
               "memory:read",
-              "conversation:write"
+              "conversation:write",
+              "distilled:write"
             ]
           }
         }
